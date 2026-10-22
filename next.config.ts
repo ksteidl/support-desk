@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // IMAP/SMTP libraries rely on Node built-ins and must not be bundled.
+  serverExternalPackages: ["imapflow", "mailparser", "nodemailer"],
   turbopack: {
     rules: {
       "*.css": {
